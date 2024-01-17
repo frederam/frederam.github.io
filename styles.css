@@ -1,3 +1,7 @@
 .header-icon:hover .header-icon-path {
     fill: rgb(163, 161, 157);;
 }
+
+#container {
+    background-color: #e6e6e6;
+}
