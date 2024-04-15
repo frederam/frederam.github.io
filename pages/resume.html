@@ -1,78 +1,103 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-        <title>Resume - Frederick Valle</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <link href="../styles.css" rel="stylesheet">
-        <script src="../build/pdf.js"></script>
-        <link rel="stylesheet" href="/web/viewer.css">
-        <script src="/web/viewer.js"></script>
-        <script>
-            function includeHTML() {
-              var z, i, elmnt, file, xhttp;
-              /* Loop through a collection of all HTML elements: */
-              z = document.getElementsByTagName("*");
-              for (i = 0; i < z.length; i++) {
-                elmnt = z[i];
-                /*search for elements with a certain atrribute:*/
-                file = elmnt.getAttribute("include-html");
-                if (file) {
-                  /* Make an HTTP request using the attribute value as the file name: */
-                  xhttp = new XMLHttpRequest();
-                  xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4) {
-                      if (this.status == 200) {
-                        elmnt.innerHTML = this.responseText;
-                        document.getElementById("resume").classList.add("active");
-                        document.getElementById("resume").setAttribute("aria-current", "page")
-                    }
-                      if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                      /* Remove the attribute, and call this function once more: */
-                      elmnt.removeAttribute("include-html");
-                      includeHTML();
-                    }
-                  }
-                  xhttp.open("GET", file, true);
-                  xhttp.send();
-                  /* Exit the function: */
-                  return;
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resume - Frederick Valle</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link href="../styles.css" rel="stylesheet" />
+    <script src="../build/pdf.js"></script>
+    <link rel="stylesheet" href="/web/viewer.css" />
+    <script src="/web/viewer.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script>
+      function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("include-html");
+          if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+              if (this.readyState == 4) {
+                if (this.status == 200) {
+                  elmnt.innerHTML = this.responseText;
+                  document.getElementById("resume").classList.add("active");
+                  document.getElementById("resume").setAttribute("aria-current", "page");
                 }
+                if (this.status == 404) {
+                  elmnt.innerHTML = "Page not found.";
+                }
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("include-html");
+                includeHTML();
               }
-            }
-        </script>
-    </head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HY6TFF3YN7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+            };
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+          }
+        }
+      }
+    </script>
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HY6TFF3YN7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  gtag('config', 'G-HY6TFF3YN7');
-</script>
-    <body id="container">
-      <div class="sticky-top" include-html="/nav.html"></div>
-      <div class="container-fluid" style="min-height:100vh;">
-            <div class="row mt-4">
-                <div class="col-12">
-                    <div class="text-center">
-                        <h1>Take a look at my resume:</h1>
-                        <iframe id="pdf-js-viewer" src="/web/viewer.html?file=../docs/Frederick_Valle_Resume.pdf" title="webviewer" frameborder="0" width="100%" height="800"></iframe>
-                        <!-- <object data="/docs/Frederick_Valle_Resume.pdf" type="application/pdf" frameborder="0" width="100%" height="750px">
+    gtag("config", "G-HY6TFF3YN7");
+  </script>
+  <body id="container">
+    <div class="sticky-top" include-html="/nav.html"></div>
+    <div include-html="/background.html "></div>
+    <div class="container-fluid" style="min-height: 100vh">
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="text-center text-white text-shadow animate__animated animate__fadeInUp">
+            <h1>Take a look at my resume:</h1>
+            <iframe
+              id="pdf-js-viewer"
+              src="/web/viewer.html?file=../docs/Frederick_Valle_Resume.pdf"
+              title="webviewer"
+              frameborder="0"
+              width="100%"
+              height="800"
+            ></iframe>
+            <!-- <object data="/docs/Frederick_Valle_Resume.pdf" type="application/pdf" frameborder="0" width="100%" height="750px">
                             <embed src="/docs/Frederick_Valle_Resume.pdf" width="100%" height="750px"/>
                         </object> -->
-                        <p>If you have trouble seeing the file, please:</p>
-                        <p><a href="/docs/Frederick_Valle_Resume.pdf">Download Instead</a></p>
-                        <!-- <object data="/docs/Frederick_Valle_Resume.pdf" width="100%" height="container-fluid"></object> -->
-                    </div>
-                </div>
-            </div>
+            <p>If you have trouble seeing the file, please:</p>
+            <p><a href="/docs/Frederick_Valle_Resume.pdf" download="Frederick_Valle_Resume">Download Instead</a></p>
+            <!-- <object data="/docs/Frederick_Valle_Resume.pdf" width="100%" height="container-fluid"></object> -->
+          </div>
         </div>
-        <div include-html="/footer.html"></div>
-        <script>
-          includeHTML();
-      </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    </body>
+      </div>
+    </div>
+    <div include-html="/footer.html"></div>
+    <script>
+      includeHTML();
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
