@@ -65,140 +65,154 @@
     <div class="sticky-top" include-html="/nav.html"></div>
     <div include-html="/background.html "></div>
     <div class="container-fluid" style="min-height: 100vh">
-      <div class="row mt-4 justify-content-center">
-        <div class="col-12">
-          <div class="text-center text-white text-shadow">
-            <h1>React Native Jobs</h1>
-            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-              <div
-                class="carousel-background"
-                style="
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  width: 100%;
-                  height: 100%;
-                  background-color: black;
-                  opacity: 0.5;
-                  border-radius: 15px;
-                "
-              ></div>
-              <div class="carousel-inner mt-4" style="border: 1px solid black; border-radius: 15px">
-                <div class="carousel-item active">
-                  <img
-                    src="images/image1.PNG"
-                    class="d-block"
-                    style="
-                      width: 100%;
-                      height: 80vh;
-                      display: block;
-                      margin-left: auto;
-                      margin-right: auto;
-                      object-fit: contain;
-                    "
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="images/image2.PNG"
-                    class="d-block"
-                    style="
-                      width: 100%;
-                      height: 80vh;
-                      display: block;
-                      margin-left: auto;
-                      margin-right: auto;
-                      object-fit: contain;
-                    "
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="images/image3.PNG"
-                    class="d-block"
-                    style="
-                      width: 100%;
-                      height: 80vh;
-                      display: block;
-                      margin-left: auto;
-                      margin-right: auto;
-                      object-fit: contain;
-                    "
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="images/image4.PNG"
-                    class="d-block"
-                    style="
-                      width: 100%;
-                      height: 80vh;
-                      display: block;
-                      margin-left: auto;
-                      margin-right: auto;
-                      object-fit: contain;
-                    "
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="images/image5.PNG"
-                    class="d-block"
-                    style="
-                      width: 100%;
-                      height: 80vh;
-                      display: block;
-                      margin-left: auto;
-                      margin-right: auto;
-                      object-fit: contain;
-                    "
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="images/image6.PNG"
-                    class="d-block"
-                    style="
-                      width: 100%;
-                      height: 80vh;
-                      display: block;
-                      margin-left: auto;
-                      margin-right: auto;
-                      object-fit: contain;
-                    "
-                  />
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+ 
       <div class="row mt-4 justify-content-center">
         <div class="col-12 col-lg-6">
+          <div class="text-center text-white text-shadow">
+            <h1>React Native Jobs</h1>
+          </div>
+          <p class="text-white text-shadow mt-4" style="font-size: x-large;">
+            A job search app developed with React Native and Expo using JavaScript. It uses the
+            <a href="https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch/" target="_blank">Jsearch API</a> for the
+            jobs source.
+          </p>
           <h2 class="text-white text-shadow text-center">Test the app with Expo Go:</h2>
 
-          <ol class="text-white text-shadow" type="1">
-            <li>Download the Expo Go app from <a href="https://apps.apple.com/us/app/expo-go/id982107779" target="_blank">Apple App Store</a> or <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_US&gl=US" target="_blank">Google Play Store</a></li>
-            <li>Scan the QR code that's shown in <a href="https://expo.dev/preview/update?message=Test%20App&updateRuntimeVersion=1.0.0&createdAt=2024-04-15T06%3A18%3A53.333Z&slug=exp&projectId=10ed35a5-778b-4d4a-ac51-f8a6c168414f&group=0e05c2a1-379c-4d52-abb9-8b20e3e57d72" target="_blank">this link</a></li>
+          <ol class="text-white text-shadow" style="font-size: x-large;" type="1">
+            <li>
+              Download the Expo Go app from
+              <a href="https://apps.apple.com/us/app/expo-go/id982107779" target="_blank">Apple App Store</a> or
+              <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_US&gl=US" target="_blank"
+                >Google Play Store</a
+              >
+            </li>
+            <li>
+              Scan the QR code that's shown in
+              <a
+                href="https://expo.dev/preview/update?message=Test%20App&updateRuntimeVersion=1.0.0&createdAt=2024-04-15T06%3A18%3A53.333Z&slug=exp&projectId=10ed35a5-778b-4d4a-ac51-f8a6c168414f&group=0e05c2a1-379c-4d52-abb9-8b20e3e57d72"
+                target="_blank"
+                >this link</a
+              >
+            </li>
             <li>After you scan the QR code you should be able to test the app through Expo Go</li>
           </ol>
           <div class="text-center">
             <a href="https://github.com/frederam/react-native-jobs" target="_blank" class="btn btn-primary"
               >Go to Github Repository</a
             >
-            <p class="text-white text-shadow mt-4" style="font-size: x-large; padding-bottom: 75px">
-              A job search app developed with React Native and Expo using JavaScript. It uses the
-              <a href="https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch/" target="_blank">Jsearch API</a> for the
-              jobs source.
-            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4 justify-content-center">
+        <div class="col-12">
+          <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div
+              class="carousel-background"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: black;
+                opacity: 0.5;
+                border-radius: 15px;
+              "
+            ></div>
+            <div class="carousel-inner mt-4" style="border: 1px solid black; border-radius: 15px">
+              <div class="carousel-item active">
+                <img
+                  src="images/image1.PNG"
+                  class="d-block"
+                  style="
+                    width: 100%;
+                    height: 80vh;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    object-fit: contain;
+                  "
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/image2.PNG"
+                  class="d-block"
+                  style="
+                    width: 100%;
+                    height: 80vh;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    object-fit: contain;
+                  "
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/image3.PNG"
+                  class="d-block"
+                  style="
+                    width: 100%;
+                    height: 80vh;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    object-fit: contain;
+                  "
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/image4.PNG"
+                  class="d-block"
+                  style="
+                    width: 100%;
+                    height: 80vh;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    object-fit: contain;
+                  "
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/image5.PNG"
+                  class="d-block"
+                  style="
+                    width: 100%;
+                    height: 80vh;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    object-fit: contain;
+                  "
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/image6.PNG"
+                  class="d-block"
+                  style="
+                    width: 100%;
+                    height: 80vh;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    object-fit: contain;
+                  "
+                />
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
         </div>
       </div>
