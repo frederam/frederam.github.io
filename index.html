@@ -48,6 +48,24 @@
           }
         }
       }
+
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.getElementById("copy-button").addEventListener("click", function () {
+          const email = "favg0997@gmail.com";
+          navigator.clipboard
+            .writeText(email)
+            .then(() => {
+              const copyMessage = document.getElementById("copy-message");
+              copyMessage.style.display = "inline";
+              setTimeout(() => {
+                copyMessage.style.display = "none";
+              }, 3000);
+            })
+            .catch((err) => {
+              console.error("Failed to copy: ", err);
+            });
+        });
+      });
     </script>
   </head>
   <!-- Google tag (gtag.js) -->
@@ -84,14 +102,17 @@
               "
             />
             <h1 class="text-white text-shadow">Hello, I'm Frederick</h1>
-            <h2 class="text-white-50 text-shadow">Software Developer</h2>
+            <h2 class="text-primary text-shadow">Software Developer</h2>
             <h3 class="text-secondary text-shadow">🦩Miami, FL</h3>
           </div>
           <div class="text-white text-shadow float-right animate__animated animate__fadeInUp">
             <ul style="font-size: x-large; gap: 20px">
-              <li style="padding-top: 20px">🏢 I previously worked at Stagewood Consortium Inc</li>
               <li style="padding-top: 20px">
-                🧑‍💻 Check out my <a href="/pages/projects.html">work</a> and my <a href="/pages/resume.html">resume</a>
+                🏢 I currently work as a freelancer and previously worked at Stagewood Consortium Inc
+              </li>
+              <li style="padding-top: 20px">
+                🧑‍💻 Check out my
+                <a class="animated-text" href="/pages/projects.html" style="text-decoration: none">Projects</a>
               </li>
               <li style="padding-top: 20px">
                 🖥️ Programming languages I know:
@@ -238,7 +259,11 @@
                 </ul>
               </li>
               <li style="padding-top: 20px">
-                📧 You can contact me at <a href="mailto:favg0997@gmail.com">favg0997@gmail.com</a>
+                📧 You can contact me at
+                <a class="animated-text" href="mailto:favg0997@gmail.com" style="text-decoration: none"
+                  >favg0997@gmail.com</a
+                ><button id="copy-button" title="Copy"></button>
+                <span id="copy-message">Email copied!</span>
               </li>
             </ul>
           </div>
