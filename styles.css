@@ -15,14 +15,24 @@
 .animated-text {
   -webkit-animation: text-color 8s infinite;
   animation: text-color 8s infinite;
+  display: inline-flex;
+  z-index: 1;
 }
 
 @keyframes text-color {
-  0% {color:magenta;}
-  50% {color:blue;}
-  100%{color:green}
+  25% {
+    color: magenta;
+    transform: rotate(0deg);
+  }
+  50% {
+    color: #0275d8 ;
+    transform: rotate(180deg);
+  }
+  100% {
+    color: green;
+    transform: rotate(0deg); /* Same as the start */
+  }
 }
-
 #copy-button {
   display: inline-block;
   vertical-align: middle;
@@ -116,7 +126,7 @@
 
 
 .backwrap {
-    background: #113243;
+    background: #201e7a;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100%;
@@ -146,8 +156,8 @@
     position: absolute;
     animation-name: floating;
     -webkit-animation-name: floating;
-    animation-duration: 5s;
-    -webkit-animation-duration: 5s;
+    animation-duration: 15s;
+    -webkit-animation-duration: 15s;
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
   }
