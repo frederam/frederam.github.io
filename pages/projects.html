@@ -32,8 +32,8 @@
                 if (this.status == 200) {
                   elmnt.innerHTML = this.responseText;
                   if (elmnt.id === "navbarText") {
-                    document.getElementById(elmnt.id).classList.add("active");
-                    document.getElementById(elmnt.id).setAttribute("aria-current", "page");
+                    document.getElementById("projects").classList.add("active");
+                    document.getElementById("projects").setAttribute("aria-current", "page");
                   }
                 }
                 if (this.status == 404) {
