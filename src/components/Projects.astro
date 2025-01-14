@@ -1,0 +1,27 @@
+---
+const PROJECTS = [
+  {
+    title: "React Native Jobs",
+    description: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    link: "#",
+    github: "https://github.com/frederam/react-native-jobs",
+    image: "/projects/RNJobs.webp",
+    tags: ["HTML", "CSS", "JavaScript"],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ image, title, description, tags }) => (
+    <article>
+      <h3>{title}</h3>
+      <p>{description}</p>
+      <ul>
+        {tags.map((tag) => (
+          <li>{tag}</li>
+        ))}
+      </ul>
+      <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Project ${image} screenshot`} />
+    </article>
+  ))
+}

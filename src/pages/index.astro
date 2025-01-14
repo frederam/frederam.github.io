@@ -1,0 +1,65 @@
+---
+import Badge from "../components/Badge.astro";
+import BriefcaseIcon from "../components/icons/BriefcaseIcon.astro";
+import CodeIcon from "../components/icons/CodeIcon.astro";
+import GitHubIcon from "../components/icons/GitHubIcon.astro";
+import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import Projects from "../components/Projects.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import SocialPill from "../components/SocialPill.astro";
+import Timeline from "../components/Timeline.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <main class="px-4">
+    <SectionContainer class="pt-44 pb-32">
+      <img class="rounded-full size-16 mb-4" src="profile.jpeg" alt="profile photo" />
+      <h1 class="text-white text-3xl md:text-4xl xl:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+        Hey, I'm Frederick <a
+          href="https://www.linkedin.com/in/fvg97/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"><Badge>Open to work</Badge></a
+        >
+      </h1>
+      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+        <span class="text-red-200/95">+3 years of experience.</span>
+        <span class="text-yellow-200/90">Full-Stack Developer.</span>
+        <span class="opacity-75">Specialized in creating unique software solutions.</span>
+      </h2>
+
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href="https://www.linkedin.com/in/fvg97/">
+          <LinkedInIcon class="size-4 md:size-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/frederam">
+          <GitHubIcon class="size-4 md:size-6" />
+          Github
+        </SocialPill>
+        <SocialPill href="mailto:favg0997@gmail.com">
+          <MailIcon class="size-4 md:size-6" />
+          favg0997@gmail.com
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="experience">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <BriefcaseIcon class="size-7"/>
+        Experience
+      </h2>
+      <Timeline />
+    </SectionContainer>
+
+    <SectionContainer id="experience">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-7"/>
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+  </main>
+</Layout>

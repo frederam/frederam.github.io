@@ -1,0 +1,33 @@
+---
+import TimelineItem from "./TimelineItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "February 2022",
+    title: "App UI",
+    description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+    link: "#",
+  },
+  {
+    date: "February 2022",
+    title: "App UI",
+    description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+    link: "#",
+  },
+  {
+    date: "February 2022",
+    title: "App UI",
+    description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-4">
+        <TimelineItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
