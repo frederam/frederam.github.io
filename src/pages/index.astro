@@ -1,10 +1,12 @@
 ---
+import AboutMe from "../components/AboutMe.astro";
 import Badge from "../components/Badge.astro";
 import BriefcaseIcon from "../components/icons/BriefcaseIcon.astro";
 import CodeIcon from "../components/icons/CodeIcon.astro";
 import GitHubIcon from "../components/icons/GitHubIcon.astro";
 import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
 import MailIcon from "../components/icons/Mail.astro";
+import ProfileCheckIcon from "../components/icons/ProfileCheckIcon.astro";
 import Projects from "../components/Projects.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import SocialPill from "../components/SocialPill.astro";
@@ -13,7 +15,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <main class="px-4">
+  <main class="px-4 text-white">
     <SectionContainer class="pt-44 pb-32">
       <img class="rounded-full size-16 mb-4" src="profile.jpeg" alt="profile photo" />
       <h1 class="text-white text-3xl md:text-4xl xl:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
@@ -60,6 +62,13 @@ import Layout from "../layouts/Layout.astro";
         Projects
       </h2>
       <Projects />
+    </SectionContainer>
+    <SectionContainer id="about-me">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <ProfileCheckIcon class="size-7"/>
+        About me
+      </h2>
+      <AboutMe />
     </SectionContainer>
   </main>
 </Layout>
