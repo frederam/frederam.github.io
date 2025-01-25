@@ -19,12 +19,14 @@ import Layout from "../layouts/Layout.astro";
     <SectionContainer class="pt-44 pb-32">
       <img class="rounded-full size-16 mb-4" src="profile.jpeg" alt="profile photo" />
       <h1 class="text-white text-3xl md:text-4xl xl:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
-        Hey, I'm Frederick <a
+        Hey, I'm Frederick
+        <a
           href="https://www.linkedin.com/in/fvg97/"
           target="_blank"
           rel="noopener"
-          class="flex justify-center items-center"><Badge>Open to work</Badge></a
-        >
+          class="flex justify-center items-center hover:scale-105 transition"
+          ><Badge>Open to work</Badge>
+        </a>
       </h1>
       <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
         <span class="text-red-200/95">+3 years of experience.</span>
@@ -48,24 +50,24 @@ import Layout from "../layouts/Layout.astro";
       </nav>
     </SectionContainer>
 
-    <SectionContainer id="experience">
+    <SectionContainer id="experience" class="scroll-mt-20">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-        <BriefcaseIcon class="size-7"/>
+        <BriefcaseIcon class="size-7" />
         Experience
       </h2>
       <Timeline />
     </SectionContainer>
 
-    <SectionContainer id="projects">
+    <SectionContainer id="projects" class="scroll-mt-20">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-        <CodeIcon class="size-7"/>
+        <CodeIcon class="size-7" />
         Projects
       </h2>
       <Projects />
     </SectionContainer>
-    <SectionContainer id="about-me">
+    <SectionContainer id="about-me" class="scroll-mt-20">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-        <ProfileCheckIcon class="size-7"/>
+        <ProfileCheckIcon class="size-7" />
         About me
       </h2>
       <AboutMe />

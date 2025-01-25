@@ -1,7 +1,27 @@
 ---
 import ExpoIcon from "./icons/ExpoIcon.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
 import JavaScriptIcon from "./icons/JavaScriptIcon.astro";
 import ReactNativeIcon from "./icons/ReactNativeIcon.astro";
+import LinkButton from "./LinkButton.astro";
+import WebsiteIcon from "./icons/WebsiteIcon.astro";
+import CSharpIcon from "./icons/CSharpIcon.astro";
+import MSSQLIcon from "./icons/MSSQLIcon.astro";
+
+type Tag = {
+  name: string;
+  class: string;
+  icon: (_props: Record<string, any>) => any;
+};
+
+type Project = {
+  title: string;
+  description: string;
+  github?: string;
+  image: string;
+  tags: Tag[];
+  link?: string;
+};
 
 const TAGS = {
   REACT_NATIVE: {
@@ -16,38 +36,71 @@ const TAGS = {
   },
   JAVASCRIPT: {
     name: "JavaScript",
-    class: "bg-gray-900 text-white-",
+    class: "bg-gray-900 text-white",
     icon: JavaScriptIcon,
   },
+  C_SHARP: {
+    name: "C#",
+    class: "bg-gray-900 text-white",
+    icon: CSharpIcon,
+  },
+  MS_SQL: {
+    name: "Microsoft SQL Server",
+    class: "bg-white/80 text-black",
+    icon: MSSQLIcon,
+  }
 };
-const PROJECTS = [
+const PROJECTS: Project[] = [
   {
     title: "React Native Jobs",
-    description: "A job search application built with React Native and Expo, leveraging JavaScript for seamless functionality. The app integrates the Jsearch API as its primary job source, delivering reliable and up-to-date job listings.",
-    link: "#",
+    description:
+      "A job search application built with React Native and Expo, leveraging JavaScript for seamless functionality. The app integrates the Jsearch API as its primary job source, delivering reliable and up-to-date job listings.",
     github: "https://github.com/frederam/react-native-jobs",
     image: "/projects/RNJobs.webp",
     tags: [TAGS.REACT_NATIVE, TAGS.EXPO, TAGS.JAVASCRIPT],
   },
+  {
+    title: "Importation Management and Payment Scheduling System",
+    description:
+      "Made for a large hardware store located in Nicaragua in order to manage their importations and schedule payments of imported products. It was developed using C# programing language, Microsoft SQL Server Database Engine and DevExpress Components.",
+    image: "/projects/Halcon.webp",
+    tags: [TAGS.C_SHARP, TAGS.MS_SQL],
+  },
 ];
 ---
 
-{
-  PROJECTS.map(({ image, title, description, tags }) => (
-    <article>
-      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-      <p class="text-lg mb-4 text-pretty">{description}</p>
-      <ul class="flex gap-x-2 flex-row mb-2">
-        {tags.map((tag) => (
-          <li>
-            <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
-              <tag.icon class="size-4" />
-              {tag.name}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Project ${image} screenshot`} />
-    </article>
-  ))
-}
+<section class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+      <article>
+        <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+        <p class="text-lg mb-4 text-pretty">{description}</p>
+        <ul class="flex gap-x-2 flex-row mb-2">
+          {tags.map((tag) => (
+            <li>
+              <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <img class="rounded" src={image} alt={`Project ${image} screenshot`} />
+        <footer class="flex gap-x-4 justify-start mt-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHubIcon class="size-7" />
+              See source code
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <WebsiteIcon />
+              Go to website
+            </LinkButton>
+          )}
+        </footer>
+      </article>
+    ))
+  }
+</section>
