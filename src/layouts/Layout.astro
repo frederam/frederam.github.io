@@ -30,10 +30,10 @@ import Footer from "../components/Footer.astro";
         ad_storage: "denied",
         ad_user_data: "denied",
         ad_personalization: "denied",
-        analytics_storage: "denied",
+        analytics_storage: "granted",
       });
 
-      gtag("config", "G-HY6TFF3YN7");
+      gtag("config", "G-HY6TFF3YN7", { anonymize_ip: true });
     </script>
   </head>
 
