@@ -27,7 +27,7 @@ type Project = {
 const TAGS = {
   REACT_NATIVE: {
     name: "React Native",
-    class: "bg-gray-900 text-white",
+    class: "bg-gray-800 text-white",
     icon: ReactNativeIcon,
   },
   EXPO: {
@@ -37,21 +37,31 @@ const TAGS = {
   },
   JAVASCRIPT: {
     name: "JavaScript",
-    class: "bg-gray-900 text-white",
+    class: "bg-gray-800 text-white",
     icon: JavaScriptIcon,
   },
   C_SHARP: {
     name: "C#",
-    class: "bg-gray-900 text-white",
+    class: "bg-gray-800 text-white",
     icon: CSharpIcon,
   },
   MS_SQL: {
     name: "Microsoft SQL Server",
     class: "bg-white/80 text-black",
     icon: MSSQLIcon,
-  }
+  },
 };
 const PROJECTS: Project[] = [
+  {
+    title: "Excel emulator",
+    description:
+      "Browser-based spreadsheet emulator that allows users to perform arithmetic operations and use built-in functions like SUM, AVG, MIN, MAX, ABS, ROUND, and IF. With an intuitive UI, users can navigate and interact seamlessly with spreadsheet data.",
+    github: "https://github.com/frederam/projects-pages/tree/main/excel-clone",
+    link: "https://frederick-projects.orbiter.website/excel-clone/",
+    target: "_blank",
+    image: "/projects/Excel.webp",
+    tags: [TAGS.JAVASCRIPT],
+  },
   {
     title: "React Native Jobs",
     description:
@@ -74,8 +84,50 @@ const PROJECTS: Project[] = [
 <section class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github, target }) => (
-      <article>
-        <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt="Recién llegado vs 5 años en Nueva Zelanda"
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-100">{title}</h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}>
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-2 text-gray-400">{description}</div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github} target={target}>
+                  <GitHubIcon class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link} target={target}>
+                  <WebsiteIcon class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+
+        {/* <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
         <p class="text-lg mb-4 text-pretty">{description}</p>
         <ul class="flex gap-x-2 flex-row mb-2">
           {tags.map((tag) => (
@@ -90,18 +142,18 @@ const PROJECTS: Project[] = [
         <img class="rounded" src={image} alt={`Project ${image} screenshot`} />
         <footer class="flex gap-x-4 justify-start mt-4">
           {github && (
-            <LinkButton href={github} target={target} >
+            <LinkButton href={github} target={target}>
               <GitHubIcon class="size-7" />
               See source code
             </LinkButton>
           )}
           {link && (
-            <LinkButton href={link} target={target} >
+            <LinkButton href={link} target={target}>
               <WebsiteIcon />
               Go to website
             </LinkButton>
           )}
-        </footer>
+        </footer> */}
       </article>
     ))
   }
